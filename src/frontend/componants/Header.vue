@@ -3,7 +3,7 @@
 </template>
 <style scoped>
 .title {
-    margin: 15px;
+    margin-top: 15px;
     text-align: center;
     font-weight: 500;
     font-size:7vh;

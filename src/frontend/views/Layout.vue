@@ -2,17 +2,12 @@
     <div class="layout">
         <header>
             <slot name="header"></slot>
-        </header>  
-
-        <nav class="timer">
-            <slot name="timer"></slot> 
-        </nav>
+        </header> 
 
         <main class="main-content">
             <slot name="main"></slot>
         </main>
         
-
         <footer class="footer">
             <slot name="footer"></slot>
         </footer>

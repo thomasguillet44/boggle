@@ -2,29 +2,48 @@
     <div class="clock">
         <div class="progress" :class="{ active: isStarted }"></div>
         <div  class="button-start-container">
-            <button v-if="!isStarted" @click="start" class="button-start">▶</button>
+            <button v-if="!isStarted" @click="emitStart" class="button-start">▶</button>
         </div>
     </div>
 </template>
 <script setup>
-import { ref} from 'vue';
+import { watch } from 'vue';
 
-const isStarted = ref(false);
+const props = defineProps({
+  isStarted: Boolean
+})
 
-const emit = defineEmits(['start']);
+const emit = defineEmits(['start', 'end']);
 
-async function start() {
-  isStarted.value = false;
+// timer id pour eviter l'exister parallele de deux timer, 
+// au cas plus tard on veut ajouter la possibilité de restart en cours de partie (idem pour le reset)
+let timerId = null
 
-  isStarted.value = true;
-
+function emitStart() {
   emit('start');
+}
 
-  setTimeout(() => {
-    isStarted.value = false;
+function startTimer() {
+  clearTimeout(timerId);
+
+  timerId = setTimeout(() => {
+    emit('end');
   }, 180000);
 }
 
+function resetTimer() {
+  clearTimeout(timerId)
+  timerId = null
+}
+
+watch(() => props.isStarted, (started) => {
+    if (started) {
+      startTimer()
+    } else {
+      resetTimer()
+    }
+  }
+)
 </script>
 <style scoped>
 .clock {
@@ -72,5 +91,6 @@ async function start() {
 .button-start:hover{
   background-color: #f9cef7;
   cursor: pointer;
+  transform: translateY(-2px) translateX(-2px);
 }
 </style>

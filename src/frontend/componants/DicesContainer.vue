@@ -1,13 +1,11 @@
 <template>
-    <div class="grid-wrapper">
-        <div class="grid">
-            <DiceLetter 
-                v-for="(letter, index) in grille"
-                :key="index"
-                class="cell"
-                :letter="letter"
-                :isStarted="isStarted"/>
-        </div>
+    <div class="grid">
+        <DiceLetter 
+            v-for="(letter, index) in grille"
+            :key="index"
+            class="cell"
+            :letter="letter"
+            :isStarted="isStarted"/>
     </div>
 </template>
 <script setup>
@@ -17,14 +15,8 @@ const props = defineProps({
     isStarted: Boolean,
     grille: Object
 })
-
 </script>
 <style>
-.grid-wrapper {
-    width: 50vh;
-    aspect-ratio: 1 / 1;
-}
-
 .grid {
     display: grid;
     gap: 0.5vh;

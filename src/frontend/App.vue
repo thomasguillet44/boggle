@@ -8,10 +8,10 @@
         <Header></Header>
       </template>
       <template #timer>
-        <Timer @start="isStarted = true"></Timer>
+        
       </template>
       <template #main>
-        <Main :isStarted="isStarted"></Main>
+        <Main></Main>
       </template>
 
       <template #footer>
@@ -24,8 +24,4 @@
 import Layout from './views/Layout.vue';
 import Main from './views/Main.vue';
 import Header from './componants/Header.vue';
-import Timer from './componants/Timer.vue';
-import { ref } from 'vue';
-
-const isStarted = ref(false);
 </script>
