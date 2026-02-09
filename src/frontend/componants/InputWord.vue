@@ -21,7 +21,7 @@ function resetElement() {
 }
 
 const emitsWord = () => {
-    if(isStarted) {
+    if(props.isStarted) {
         emit('word', {newWord : word.value});
         resetElement();
     }

@@ -21,6 +21,7 @@ const props = defineProps({
     border: 3px solid black;
     border-radius: 6px;
     height: 50vh;
+    overflow-y: auto;
 }
 
 .word-found {
