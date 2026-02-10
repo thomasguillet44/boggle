@@ -1,5 +1,5 @@
 <template>
-    <div class="title bitcount-single-100">Boggle yeah</div>
+    <div class="title bitcount-single-100">Boggle</div>
 </template>
 <style scoped>
 .title {
