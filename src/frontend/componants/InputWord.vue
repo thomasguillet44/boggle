@@ -22,7 +22,7 @@ function resetElement() {
 
 const emitsWord = () => {
     if(props.isStarted) {
-        emit('word', {newWord : word.value});
+        emit('word', {newWord : word.value.toLowerCase()});
         resetElement();
     }
 };
