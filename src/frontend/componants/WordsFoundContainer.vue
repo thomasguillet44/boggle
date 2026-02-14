@@ -13,15 +13,23 @@ const props = defineProps({
 </script>
 <style>
 .words-found-container {
-    display: grid;
-    grid-template-rows: repeat(8, 1fr);
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-direction: column;
     margin: 5px;
     padding: 5px;
     border: 3px solid black;
     border-radius: 6px;
-    height: 50vh;
+    height: 50dvh;
     overflow-y: auto;
+}
+
+@media (min-width: 769px) {
+    .words-found-container {
+        display: grid;
+        height: 50vh;
+        grid-template-rows: repeat(8, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .word-found {

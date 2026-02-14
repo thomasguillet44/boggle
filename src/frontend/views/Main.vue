@@ -169,8 +169,14 @@ watch(isStarted, (started) => {
 }
 
 .timer-container {
-  width: 150vh;
+  width: 90%;
   margin-bottom: 5vh;
+}
+
+@media (min-width: 769px) {
+    .timer-container {
+        width: 150vh;
+    }
 }
 
 .bloc-modale {

@@ -12,7 +12,6 @@
       </template>
 
       <template #footer>
-        FOOTER
       </template>     
     </Layout>
   </p>
