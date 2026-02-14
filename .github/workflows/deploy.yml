@@ -3,7 +3,7 @@ name: Deploy Boggle
 on:
   push:
     branches:
-      - main  # ou ta branche de prod
+      - main
 
 jobs:
   deploy:

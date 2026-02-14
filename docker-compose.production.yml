@@ -1,12 +1,20 @@
+version: "3.8"
+
 services:
   boggle-frontend:
     build:
-      context: ./
+      context: ./ 
       dockerfile: ./src/frontend/dockerfiles/Dockerfile.prod
     container_name: boggle-app
-    ports:
-      - "8081:80"
+    restart: always
+    expose:
+      - "80"    # port interne pour le proxy
     volumes:
       - .:/boggle
       - /boggle/node_modules
-    restart: always
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
